@@ -4,7 +4,8 @@ This project is my playground to try to learn how to use react with vanilla zdog
 
 1.  npm run eject
 2.  Add this script to webpack.config.js
-    ```module: {
+    ```
+        module: {
             rules: [
                      {
                       test: require.resolve('./node_modules/zdog/js/dragger.js'),
@@ -12,5 +13,5 @@ This project is my playground to try to learn how to use react with vanilla zdog
                      },
                     ...
                    ]
-               }
+                }
     ```
