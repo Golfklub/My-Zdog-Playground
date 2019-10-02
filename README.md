@@ -8,7 +8,7 @@ This project is my playground to try to learn how to use react with vanilla zdog
         module: {
             rules: [
                      {
-                      test: require.resolve('./node_modules/zdog/js/dragger.js'),
+                      test: require.resolve('../node_modules/zdog/js/dragger.js'),
                       use: 'imports-loader?this=>window'
                      },
                     ...

@@ -339,7 +339,7 @@ module.exports = function(webpackEnv) {
         },
         // Add rules for zdog
         {
-          test: require.resolve("./node_modules/zdog/js/dragger.js"),
+          test: require.resolve("../node_modules/zdog/js/dragger.js"),
           use: "imports-loader?this=>window"
         },
         {
