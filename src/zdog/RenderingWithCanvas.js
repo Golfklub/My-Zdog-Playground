@@ -19,6 +19,17 @@ export const RenderingWithCanvas = () => {
   // create an scene Anchor to hold all items
   let scene = new Zdog.Anchor();
 
+  // ----- drawImage ----- //
+
+  const drawImage = () => {
+    const img = new Image();
+    img.onload = () => {
+      ctx.drawImage(img, 0, 0);
+    };
+    img.src =
+      "http://upload.wikimedia.org/wikipedia/commons/d/d2/Svg_example_square.svg";
+  };
+
   // ----- model ----- //
 
   // add shapes to scene
@@ -47,6 +58,7 @@ export const RenderingWithCanvas = () => {
     scene.updateGraph();
     render();
     requestAnimationFrame(animate);
+    drawImage();
   }
 
   function render() {

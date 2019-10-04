@@ -10,6 +10,9 @@ export const RenderingWithIllustration = () => {
     // stop rotation when dragging starts
     onDragStart: function() {
       isSpinning = false;
+    },
+    onDragEnd: () => {
+      isSpinning = true;
     }
   });
 
@@ -36,12 +39,19 @@ export const RenderingWithIllustration = () => {
     fill: true
   });
 
+  const img = new Image();
+  const canvas = document.querySelector(".zdog-illustration");
+  const ctx = canvas.getContext("2d");
+  img.src =
+    "http://upload.wikimedia.org/wikipedia/commons/d/d2/Svg_example_square.svg";
+
   function animate() {
     // rotate
     if (isSpinning) {
       illo.rotate.y += 0.03;
     }
     illo.updateRenderGraph();
+    ctx.drawImage(img, 0, 0);
     requestAnimationFrame(animate);
   }
   animate();
